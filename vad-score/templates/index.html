@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>情緒分數計算測試</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="../static/b-bot.png" type="image/x-icon" >
+  <!-- Template CSS -->
+  <link rel="stylesheet" type="text/css" href="../static/style-starter.css">
+
+</head>
+
+<body>
+<!-- site header -->
+<header id="site-header" class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="index.html">
+        <img src="../static/logo.png">
+      </a>
+      <button class="navbar-toggler bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+      </div>
+  </nav>
+</header>
+<!-- //site header -->
+
+<!-- contact page breadcrumns -->
+<section class="inner-banner">
+
+</section>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-padding">
+        <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+        <li class="breadcrumb-item active" aria-current="page">情緒分數計算測試</li>
+    </ol>
+</nav>
+<!-- contact page breadcrumns -->
+
+<!-- contact section -->
+<section class="w3l-contact3">
+    <div class="contact1-bg section-gap">
+        <div class="container">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12 px-lg-3 px-0">
+                <h2 class="section-title">情緒分數計算測試</h2>
+                <h4 class="text-center">本系統係以NRC-VAD三維情緒辭典發展成一套中文情緒分數演算法，目前仍在測試階段</h4>
+            </div>
+            <div>
+
+                {% if text == "" %}
+                <form method="post">
+                    <input type="name" name="user" style="height: 40px; border-radius: 5px; width: 30% !important; ">
+                    <input class="btn btn-primary btn-style mr-2" type="submit" name="send" value="送出">
+                </form>
+                {% else %}
+                <div>
+                    <div style="margin-top:10px;">
+                        <form method="post">
+                            <input type="name" name="user" style="height: 40px; border-radius: 5px; width: 30% !important; ">
+                            <input class="btn btn-primary btn-style mr-2" type="submit" name="send" value="送出">
+                        </form>
+                    </div>
+                    <h3>剛才輸入的語句是：{{name}}</h3>
+                    <br>
+                    <table>
+                        {% for row in data %}
+                        <tr>
+                            <td><font size="5px"> {{row}} </font> </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% endif %}
+
+            </div>
+                <!-- map iframe-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- site footer -->
+<footer id="site-footer" style="position: absolute;width: 100%;bottom: 0;">
+  <div class="bottom-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 text-lg-left text-center mb-lg-0 mb-3">
+          <p class="copyright">© 2020 All Rights Reserved. Design by
+            <a>彭麒安</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- //site footer -->
+
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+  <span class="fa fa-angle-up"></span>
+</button>
+
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction()
+  };
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("movetop").style.display = "block";
+    } else {
+      document.getElementById("movetop").style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+<!-- //move top -->
+
+<!-- javascript -->
+<script src="../static/jquery-3.3.1.min.js"></script>
+
+<!-- libhtbox -->
+<script src="../static/lightbox-plus-jquery.min.js"></script>
+
+<!-- particles -->
+<script src='../static/particles.min.js'></script>
+<script src="../static/script.js"></script>
+<!-- //particles -->
+
+<!-- owl carousel -->
+<script src="../static/owl.carousel.js"></script>
+<script>
+  $(document).ready(function () {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      margin: 10,
+      nav: true,
+      loop: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        767: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  })
+</script>
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!-- bootstrap -->
+<script src="../static/bootstrap.min.js"></script>
+
+</body>
+</html>

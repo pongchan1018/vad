@@ -1,0 +1,6 @@
+Flask
+gunicorn
+jieba
+pandas==1.1.0
+numpy==1.19.1
+
